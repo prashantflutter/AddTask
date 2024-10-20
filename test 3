@@ -1,0 +1,79 @@
+Open in app
+Sign up
+
+Sign in
+
+
+
+Flutter Tutorial — Image Picker From Camera & Gallery
+Kavit (zenwraight)
+techie
+Kavit (zenwraight)
+
+·
+Follow
+
+Published in
+techie
+
+3 min read
+·
+Feb 17, 2022
+
+Listen
+
+
+Share
+
+
+For folks who want to have a thorough walk through can watch the video linked below:-
+
+
+Package Installation and Configuration setup
+First open pubspec.yaml file and add package image_picker: ^0.8.3 . This is the package that will provide us with methods to access our gallery and camera.
+Now, once the package is installed, we would need to make some changes to our an iOS and Android config files. For this article purpose, I am using iOS simulator.
+Add the following keys to your Info.plist file, located in <project root>/ios/Runner/Info.plist:
+
+NSPhotoLibraryUsageDescription - describe why your app needs permission for the photo library. This is called Privacy - Photo Library Usage Description in the visual editor.
+NSCameraUsageDescription - describe why your app needs access to the camera. This is called Privacy - Camera Usage Description in the visual editor.
+UI and Coding
+Now, that our dependencies and configurations are set, let’s jump onto coding part.
+
+Firstly for this demo, I will just create two basic buttons, one for Gallery and another for camera. Copy and paste the below code.
+
+@override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Image Picker Example"),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            MaterialButton(
+                color: Colors.blue,
+                child: const Text(
+                    "Pick Image from Gallery",
+                  style: TextStyle(
+                    color: Colors.white70, fontWeight: FontWeight.bold
+                  )
+                ),
+                onPressed: () {
+                }
+            ),
+            MaterialButton(
+                color: Colors.blue,
+                child: const Text(
+                    "Pick Image from Camera",
+                    style: TextStyle(
+                        color: Colors.white70, fontWeight: FontWeight.bold
+                    )
+                ),
+                onPressed: () {
+                }
+            ),
+          ],
+        ),
+      )
+    );
+  }
