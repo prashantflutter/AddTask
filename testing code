@@ -1,0 +1,44 @@
+What is Flutter image_picker?
+Coding an image picker widget in Flutter from scratch would be tedious. Flutter comes with an image picker plugin for picking images from the device gallery or taking new pictures from the camera.
+
+The image_picker plugin exposes some helpful methods from the ImagePicker class it exports:
+
+import 'package:image_picker/image_picker.dart';
+
+ImagePicker picker = ImagePicker();
+The picker instance has public methods that we’ll call to open the image selection dialog. Let’s look at these methods.
+
+pickImage
+
+XFile? image = await picker.pickImage(source: ImageSource.gallery);
+The pickImage method opens the choose dialog and displays the phone’s gallery from which to select the image. The source arg states where the image is to be picked from.
+
+Here, the source is set to ImageSource.gallery, so the image is selected from the user’s gallery.
+
+XFile? image = await picker.pickImage(source: ImageSource.camera);
+In the example above, the image is taken from the device camera. This method opens the camera and picks the picture snapped by the user. The source: ImageSource.camera arg is what opens the device camera.
+
+pickVideo
+XFile? image = await picker.pickVideo
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: HomePage(),
+    );
+  }
+}
+
+
+
